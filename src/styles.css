@@ -1,0 +1,45 @@
+:root { font-family: 'Inter', sans-serif; color: #f4f4f5; background: #101010; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button { font: inherit; }
+.mobile-menu-toggle { display: none; }
+button:focus-visible { outline: 2px solid #c8102e; outline-offset: 4px; }
+.header { height: 80px; background: #000; position: relative; z-index: 10; }
+.header-inner { max-width: 1440px; height: 100%; margin: 0 auto; padding: 0 59px 0 56px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.header-brand-menu { display: flex; height: 100%; align-items: center; gap: 32px; }
+.header-logo { width: 81px; height: 95.25px; flex-shrink: 0; align-self: flex-start; margin-top: 10.7px; position: relative; }
+.header-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.logo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 11px; line-height: 1.5; font-weight: 600; color: #d4d4d8; border-left: 3px solid #c8102e; background: #151515; }
+.main-menu { display: flex; align-items: center; gap: 24px; list-style: none; padding: 0; margin: 0; }
+.menu-item { display: flex; align-items: center; gap: 8px; padding: 10px 0; border: 0; background: none; color: #d4d4d8; font-weight: 600; font-size: 18px; line-height: 24px; white-space: nowrap; cursor: default; }
+.chevron { width: 24px; height: 24px; fill: none; stroke: #c8102e; stroke-width: 1.6; }
+.header-tools, .socials { display: flex; align-items: center; }
+.header-tools { gap: 16px; }
+.socials { gap: .6px; }
+.icon-button { border: 0; background: none; color: #f4f4f5; width: 39px; height: 44px; padding: 0; display: grid; place-items: center; flex-shrink: 0; cursor: default; }
+.socials .icon-button { position: relative; cursor: pointer; }
+.socials .icon-button::after { content: ''; position: absolute; bottom: 4px; left: 50%; width: 8px; height: 2px; background: #c8102e; transform: translateX(-50%); transition: opacity 180ms ease; }
+.social-circle { width: 25px; height: 25px; display: grid; place-items: center; background: #f4f4f5; color: #000; border-radius: 50%; transition: background-color 180ms ease; }
+.socials .icon-button:hover .social-circle, .socials .icon-button:focus-visible .social-circle { background: #c8102e; }
+.socials .icon-button:hover::after, .socials .icon-button:focus-visible::after { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .social-circle, .socials .icon-button::after { transition: none; } }
+.social-circle svg { width: 15px; height: 15px; }
+.tools-divider { width: 1px; height: 25.5px; background: #fff; }
+.search-button { width: 34px; }
+.search-button svg { width: 27.35px; height: 27.35px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.landing { min-height: calc(100svh - 80px); background: radial-gradient(ellipse at 100% 0%, #a40000 0, #530a0a 35%, #101010 75%); }
+/* Adaptação provisória até receber o layout mobile do Figma. */
+@media (max-width: 1150px) { .header-inner { padding-inline: 28px; } .header-brand-menu { gap: 24px; } .main-menu { gap: 16px; } .menu-item { font-size: 15px; gap: 4px; } .header-tools { gap: 8px; } .icon-button { width: 32px; } }
+@media (max-width: 900px) { .header-tools { display: none; } .header-inner { justify-content: flex-start; } }
+@media (max-width: 600px) { .header { height: auto; min-height: 80px; } .header-inner { padding: 0 16px; } .header-brand-menu { width: 100%; gap: 16px; } .header-logo { width: 56px; height: 66px; } nav { min-width: 0; overflow-x: auto; } .main-menu { gap: 16px; min-height: 80px; } .menu-item { font-size: 13px; gap: 2px; } .chevron { width: 16px; height: 16px; } }
+@media (max-width: 600px) {
+  .header { height: 80px; }
+  .header-brand-menu { justify-content: space-between; }
+  .header-logo { width: 64px; height: 75.26px; }
+  .mobile-menu-toggle { display: grid; place-items: center; width: 44px; height: 44px; border: 0; padding: 10px; background: transparent; color: white; }
+  .mobile-menu-toggle svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+  .navigation { display: none; position: absolute; left: 0; right: 0; top: 80px; padding: 20px 24px; background: #000; border-top: 1px solid #27272a; }
+  .navigation.is-open { display: block; }
+  .main-menu { flex-direction: column; align-items: stretch; gap: 4px; }
+  .menu-item { width: 100%; justify-content: space-between; font-size: 16px; min-height: 44px; }
+}

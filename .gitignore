@@ -1,0 +1,11 @@
+node_modules/
+.npm-cache/
+dist/
+.env.local
+.env
+.env.*
+!.env.example
+*.log
+/asset-contact-sheet.jpg
+/image 22*.svg.png
+/public/assets/figma/
