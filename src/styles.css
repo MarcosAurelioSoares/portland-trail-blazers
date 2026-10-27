@@ -4,6 +4,9 @@ body { margin: 0; min-width: 320px; }
 button { font: inherit; }
 .mobile-menu-toggle { display: none; }
 button:focus-visible { outline: 2px solid #c8102e; outline-offset: 4px; }
+.all-games, .standings-button { transition: background-color 180ms ease, color 180ms ease; }
+.all-games:hover, .all-games:focus-visible, .standings-button:hover, .standings-button:focus-visible { background: #f4f4f5; color: #bf0000; }
+@media (prefers-reduced-motion: reduce) { .all-games, .standings-button { transition: none; } }
 .header { height: 80px; background: #000; position: relative; z-index: 10; }
 .header-inner { max-width: 1440px; height: 100%; margin: 0 auto; padding: 0 59px 0 56px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .header-brand-menu { display: flex; height: 100%; align-items: center; gap: 32px; }
@@ -27,7 +30,12 @@ button:focus-visible { outline: 2px solid #c8102e; outline-offset: 4px; }
 .tools-divider { width: 1px; height: 25.5px; background: #fff; }
 .search-button { width: 34px; }
 .search-button svg { width: 27.35px; height: 27.35px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
-.landing { min-height: calc(100svh - 80px); background: radial-gradient(ellipse at 100% 0%, #a40000 0, #530a0a 35%, #101010 75%); }
+.landing { position: relative; isolation: isolate; display: flow-root; min-height: calc(100svh - 80px); background-color: #0f0f0f; }
+.landing::before { content: ''; position: absolute; z-index: -2; inset: 0; pointer-events: none; background: linear-gradient(197deg, #bf0000 0px, #0f0f0f clamp(1600px, 187.5vw, 2700px)); }
+.background-curves { position: absolute; z-index: -1; top: -120px; left: 0; width: 100%; height: min(73.611vw, 1060px); overflow: hidden; mix-blend-mode: overlay; opacity: .7; pointer-events: none; user-select: none; mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%), linear-gradient(to right, transparent 0%, #000 18%, #000 90%, transparent 100%); mask-composite: intersect; }
+.background-curves img { position: absolute; top: 50%; left: 50%; width: 73.611%; height: 135.849%; max-width: none; transform: translate(-50%, -50%) rotate(90deg); object-fit: fill; }
+.landing { overflow: clip; }
+@media (max-width: 600px) { .background-curves { width: 180%; left: -40%; height: 620px; top: -80px; opacity: .5; } }
 /* Adaptação provisória até receber o layout mobile do Figma. */
 @media (max-width: 1150px) { .header-inner { padding-inline: 28px; } .header-brand-menu { gap: 24px; } .main-menu { gap: 16px; } .menu-item { font-size: 15px; gap: 4px; } .header-tools { gap: 8px; } .icon-button { width: 32px; } }
 @media (max-width: 900px) { .header-tools { display: none; } .header-inner { justify-content: flex-start; } }

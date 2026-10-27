@@ -1,0 +1,13 @@
+.faq-section { position: relative; isolation: isolate; width: min(1102px, calc(100% - 112px)); margin: 232px auto 0; padding-bottom: 160px; }
+.faq-decoration { position: absolute; z-index: -1; pointer-events: none; top: -300px; left: 50%; transform: translateX(-50%) rotate(-8deg); width: 660px; max-width: 90vw; aspect-ratio: 81 / 96; background: linear-gradient(145deg, #6a1010 5%, #6c6c6c 60%, #292929 100%); opacity: .28; mask-image: url('/assets/blazers-mark-mask.svg'), linear-gradient(to bottom, #000 25%, #000 55%, transparent 95%); mask-size: contain, 100% 100%; mask-repeat: no-repeat; mask-composite: intersect; }
+.faq-question { margin: 0; font-size: inherit; }
+.faq-question button { position: relative; display: flex; width: 100%; min-height: 73.34px; align-items: center; justify-content: space-between; gap: 24px; padding: 23.16px; border: 0; background: rgb(255 255 255 / 5%); color: #fff; font-size: 17.37px; font-weight: 700; line-height: 1.4; text-align: left; cursor: pointer; }
+.faq-question button::before { content: ''; position: absolute; inset: 0; border: .96px solid white; mix-blend-mode: overlay; pointer-events: none; }
+.faq-question button:hover { background: rgb(255 255 255 / 8%); }
+.faq-question button:focus-visible { outline-offset: -4px; }
+.faq-question svg { flex-shrink: 0; width: 27px; height: 27px; fill: none; stroke: #eff0ff; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
+.faq-answer { padding: 23.16px; color: #a1a1aa; font-size: 17.37px; font-weight: 400; line-height: 1.4; }
+.faq-answer p { margin: 0 0 20px; } .faq-answer p:last-child { margin-bottom: 0; }
+@media (max-width: 1150px) { .faq-section { width: calc(100% - 56px); } }
+@media (max-width: 900px) { .faq-section { margin-top: 180px; } .faq-decoration { top: -220px; width: 560px; } }
+@media (max-width: 600px) { .faq-section { width: calc(100% - 32px); margin-top: 140px; padding-bottom: 80px; } .faq-decoration { top: -160px; width: 420px; opacity: .23; } .faq-question button { padding: 20px 16px; font-size: 16px; min-height: 70px; gap: 16px; } .faq-answer { padding: 20px 16px; font-size: 16px; line-height: 1.5; } }
