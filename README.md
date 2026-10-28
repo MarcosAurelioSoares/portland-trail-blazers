@@ -2,6 +2,8 @@
 
 Landing page de estudo desenvolvida em React a partir de um layout no Figma, com foco em fidelidade visual e adaptação para diferentes tamanhos de tela.
 
+**Site publicado:** [portland-trail-blazers.vercel.app](https://portland-trail-blazers.vercel.app)
+
 ## Estado atual
 
 - Header com logo SVG sobreposto, navegação demonstrativa e menu expansível no celular.
