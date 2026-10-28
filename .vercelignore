@@ -1,0 +1,9 @@
+node_modules/
+.npm-cache/
+.git/
+dist/
+.env
+.env.*
+asset-contact-sheet.jpg
+image 22*.svg.png
+public/assets/figma/
