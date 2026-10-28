@@ -19,8 +19,8 @@ Artes dos fãs integradas: `fan-jonas.png`, `fan-caleb.png`, `fan-carlos.png`, `
 Assets de notícias integrados:
 - `news-lillard.png`, `news-draft.png`, `news-simons.png`: imagens dos três cards.
 
-Assets de classificação aguardando exportação:
-- `nuggets.svg`, `kings.svg`: escudos da tabela.
+Assets de classificação integrados:
+- `nuggets.svg` (original `image 25.svg`) e `kings.svg` (original `image 25-1.svg`): escudos da tabela.
 
 Principais vídeos: `video-lillard-55.png`, `video-champions-1977.png`, `video-oh-lillard.png`, `video-carmelo.png` e `video-training.png` (original `Sharpe.png`) são os exports compostos originais, com bordas e reprodução incorporadas.
 

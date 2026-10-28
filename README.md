@@ -64,7 +64,7 @@ src/styles.css           # Estilos globais e header responsivo
 
 ## Escopo e próximos passos
 
-A página inclui arena com galeria manual, faixa de artes dos fãs, FAQ com abertura exclusiva animada e rodapé responsivo em quatro colunas. Os escudos de Nuggets e Kings aguardam os assets do Figma. Links, lojas de aplicativos, busca, reprodução dos vídeos e botões de jogos e classificação são demonstrativos. As datas dos jogos e a classificação reproduzem o desenho e não representam dados atualizados.
+A página inclui arena com galeria manual, faixa de artes dos fãs, FAQ com abertura exclusiva animada e rodapé responsivo em quatro colunas. A tabela de classificação utiliza os cinco escudos exportados do Figma. Links, lojas de aplicativos, busca, reprodução dos vídeos e botões de jogos e classificação são demonstrativos. As datas dos jogos e a classificação reproduzem o desenho e não representam dados atualizados.
 
 Os destaques do hero utilizam exportações compostas do Figma, com texto e controles incorporados à imagem. Fotos sem sobreposições permitirão refinar a tipografia e o recorte no celular. O layout mobile é uma adaptação da implementação, sem referência específica de Figma.
 

@@ -7,10 +7,10 @@ const articles = [
   { category: 'NBA', title: 'Anfernee Simons se lesiona contra o Houston', image: 'news-simons.png', alt: 'Anfernee Simons em quadra' },
 ];
 const standings = [
-  { name: 'Nuggets', short: 'DEN', image: null, wins: 35, losses: 11 },
+  { name: 'Nuggets', short: 'DEN', image: 'nuggets.svg', wins: 35, losses: 11 },
   { name: 'Warriors', short: 'GSW', image: 'warriors.svg', wins: 33, losses: 13 },
   { name: 'Hawks', short: 'ATL', image: 'hawks.svg', wins: 30, losses: 16 },
-  { name: 'Kings', short: 'SAC', image: null, wins: 30, losses: 16 },
+  { name: 'Kings', short: 'SAC', image: 'kings.svg', wins: 30, losses: 16 },
   { name: 'Trail Blazers', short: 'POR', image: 'blazers-logo.svg', wins: 29, losses: 17 },
 ];
 
