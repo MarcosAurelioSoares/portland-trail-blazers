@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="5486" viewBox="0 0 1440 5486" preserveAspectRatio="none">
+  <defs>
+    <!-- Direção e alcance medidos em pontos livres do export LP - Blazers.jpg. -->
+    <linearGradient id="page" x1="0" y1="1375" x2="1574" y2="712" gradientUnits="userSpaceOnUse" color-interpolation="sRGB">
+      <stop stop-color="#0F0F0F"/>
+      <stop offset="1" stop-color="#BF0000"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#page)" d="M0 0h1440v5486H0z"/>
+  <defs>
+    <linearGradient id="hero-shade" x1="0" y1="0" x2="0" y2="950" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#000000" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#hero-shade)" d="M0 0h1440v950H0z"/>
+</svg>

@@ -10,6 +10,10 @@ Assets do hero integrados:
 Os jogos são conteúdo estático do design, não uma agenda atualizada.
 O carrossel tem troca manual. A reprodução permanece demonstrativa até ser fornecido o vídeo.
 
+Fundo: `page-gradient.svg` reproduz a direção e o alcance do gradiente de `LP - Blazers.jpg`, medidos em regiões livres do export. Usa interpolação sRGB entre #0F0F0F e #BF0000 e a referência de 1440 × 5486. O fundo acompanha o documento, sem faixas individuais por seção.
+
+FAQ: `faq-portland-mark.png` é o export original `Mask group 2.png` (888 × 1328). O arquivo já inclui máscara e transparência de até 20%; não reaplicar opacidade, rotação ou recoloração.
+
 Artes dos fãs integradas: `fan-jonas.png`, `fan-caleb.png`, `fan-carlos.png`, `fan-trent.png`, `fan-mia.png`, `fan-jhenyy.png` correspondem a `Group 9.png` até `Group 14.png`. Os exports de 314 × 477 incluem os créditos; o CSS mostra os primeiros 417 px na arte e recorta os avatares da faixa inferior. Nomes e identificadores são renderizados em HTML.
 
 Assets de notícias integrados:

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Arena.css';
 
 const photos = [
@@ -17,6 +17,13 @@ function Photo({ photo }) {
 
 export default function Arena() {
   const [selected, setSelected] = useState(1);
+  const thumbnailsRef = useRef(null);
+  useEffect(() => {
+    const rail = thumbnailsRef.current;
+    const thumbnail = rail?.children[selected];
+    if (!thumbnail) return;
+    rail.scrollTo({ left: Math.max(0, thumbnail.offsetLeft - (rail.clientWidth - thumbnail.clientWidth) / 2), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  }, [selected]);
   const move = (direction) => setSelected((current) => (current + direction + photos.length) % photos.length);
   return (
     <section className="arena-section" aria-label="Conheça o Moda Center">
@@ -24,7 +31,7 @@ export default function Arena() {
       <div className="arena-content">
         <div className="arena-gallery" role="group" aria-roledescription="carrossel" aria-label="Fotos da arena" onKeyDown={(event) => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); move(event.key === 'ArrowLeft' ? -1 : 1); } }}>
           <div className="arena-main-photo"><Photo photo={photos[selected]} /><button className="arena-arrow arena-arrow-left" type="button" aria-label="Foto anterior" onClick={() => move(-1)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4m7-7-7 7 7 7" /></svg></button><button className="arena-arrow arena-arrow-right" type="button" aria-label="Próxima foto" onClick={() => move(1)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7" /></svg></button></div>
-          <div className="arena-thumbnails" aria-label="Selecionar foto">{photos.map((photo, index) => <button type="button" className="arena-thumbnail" key={photo.file} aria-label={`Mostrar foto ${index + 1}: ${photo.alt}`} aria-pressed={index === selected} onClick={() => setSelected(index)}><Photo photo={photo} /></button>)}</div>
+          <div ref={thumbnailsRef} className="arena-thumbnails" aria-label="Selecionar foto">{photos.map((photo, index) => <button type="button" className="arena-thumbnail" key={photo.file} aria-label={`Mostrar foto ${index + 1}: ${photo.alt}`} aria-pressed={index === selected} onClick={() => setSelected(index)}><Photo photo={photo} /></button>)}</div>
           <p className="sr-only" aria-live="polite">Foto {selected + 1} de {photos.length}: {photos[selected].alt}</p>
         </div>
         <div className="arena-description"><p>A Arena do Portland Trail Blazers é um marco icônico na cidade de Portland, Oregon, e é conhecida por seu ambiente vibrante e energético. Também é chamada de Moda Center, devido a um patrocínio, mas muitos fãs ainda se referem a ela pelo seu nome original.</p><p>Localizada no distrito de Lloyd, a Arena do Trail Blazers é o lar da equipe de basquete profissional da NBA, o Portland Trail Blazers. Com capacidade para mais de 19.000 espectadores, possui um design moderno, assentos confortáveis e excelente visibilidade. Além dos jogos de basquete da NBA, a Arena recebe uma variedade de eventos esportivos e shows de renome. Os torcedores apaixonados e a atmosfera vibrante tornam cada visita uma experiência emocionante.</p></div>

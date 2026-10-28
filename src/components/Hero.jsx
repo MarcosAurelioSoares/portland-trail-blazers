@@ -25,7 +25,7 @@ export default function Hero() {
   const changeSlide = (step) => setActive((current) => (current + step + slides.length) % slides.length);
   return (
     <section className="hero" aria-label="Destaques do Portland Trail Blazers">
-      <article className="hero-feature hero-feature-composite" aria-labelledby="feature-title" aria-roledescription="carrossel">
+      <article className="hero-feature hero-feature-composite" aria-labelledby="feature-title" aria-roledescription="carrossel" onKeyDown={(event) => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); changeSlide(event.key === 'ArrowLeft' ? -1 : 1); } }}>
         <div className="composite-image" style={{ backgroundImage: `url(/assets/${slide.file})` }} aria-hidden="true" />
         <div className="feature-shade" />
         <button type="button" className="feature-arrow feature-arrow-left" aria-label="Destaque anterior" onClick={() => changeSlide(-1)}><Arrow direction="left" /></button>

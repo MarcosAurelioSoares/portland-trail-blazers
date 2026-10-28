@@ -6,15 +6,17 @@ import Videos from './components/Videos.jsx';
 import Arena from './components/Arena.jsx';
 import FanArt from './components/FanArt.jsx';
 import Faq from './components/Faq.jsx';
+import Footer from './components/Footer.jsx';
 
 export default function App() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Pular para o conteúdo</a>
       <Header />
-      <main className="landing" aria-label="Portland Trail Blazers">
-        <div className="background-curves" aria-hidden="true"><img src="/assets/background-morph-lines.png" alt="" draggable="false" /></div>
-        <Hero /><News /><Videos /><Arena /><FanArt /><Faq />
-      </main>
+      <div className="landing">
+        <main id="main-content" tabIndex={-1} aria-label="Portland Trail Blazers"><Hero /><News /><Videos /><Arena /><FanArt /><Faq /></main>
+        <Footer />
+      </div>
     </>
   );
 }

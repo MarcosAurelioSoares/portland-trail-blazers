@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaTwitter, FaTiktok, FaFacebookF, FaYoutube, FaInstagram } from 'react-icons/fa';
 
 const menu = ['Início', 'Elenco', 'História', 'Eventos', 'Loja'];
@@ -8,23 +8,22 @@ const socials = [
 ];
 
 function Logo() {
-  const [missing, setMissing] = useState(false);
   return (
     <div className="header-logo" aria-label="Portland Trail Blazers">
-      {!missing ? <img src="/assets/blazers-logo.svg" alt="Portland Trail Blazers" onError={() => setMissing(true)} /> :
-        <span className="logo-placeholder" title="Aguardando o SVG do Figma">PORTLAND<br />TRAIL<br />BLAZERS</span>}
+      <img src="/assets/blazers-logo.svg" alt="Portland Trail Blazers" width="81" height="96" />
     </div>
   );
 }
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const toggleRef = useRef(null);
   return (
-    <header className="header">
+    <header className="header" onKeyDown={(event) => { if (event.key === 'Escape' && menuOpen) { setMenuOpen(false); toggleRef.current?.focus(); } }}>
       <div className="header-inner">
         <div className="header-brand-menu">
           <Logo />
-          <button type="button" className="mobile-menu-toggle" aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(!menuOpen)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={menuOpen ? 'm6 6 12 12M6 18 18 6' : 'M4 6h16M4 12h16M4 18h16'} /></svg></button>
+          <button ref={toggleRef} type="button" className="mobile-menu-toggle" aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(!menuOpen)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={menuOpen ? 'm6 6 12 12M6 18 18 6' : 'M4 6h16M4 12h16M4 18h16'} /></svg></button>
           <nav id="main-navigation" className={menuOpen ? 'navigation is-open' : 'navigation'} aria-label="Menu principal demonstrativo">
             <ul className="main-menu">
               {menu.map((label, index) => (
